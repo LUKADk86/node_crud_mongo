@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">user insert with mongo</div>
+        <div class="card-body text-dark">
+          <form action="/insert" method="post">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nom d'utilisateur</label>
+                <input type="text" name="username" class="form-control" placeholder="Choisissez un user-name">                    
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">votre Mail</label>
+                <input type="email" name="usermail" class="form-control" id="exampleInputPassword1" placeholder="votre email">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">inserer un user</button>
+              </div>
+            </form>
+        </div>
+    </div>
+ </div>
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">get all users with mongo</div>
+        <div class="card-body text-dark">
+          {{#each items}}
+            <div class="text-center">
+              <p>ID: {{this.id}}</p>
+              <p>Username: {{this.userName}}</p>
+              <p>Mail: {{this.userMail}}</p>
+              <p>---------------</p>
+            </div>
+          {{/each}}
+          <form action="/getusers" method="get">
+            <div class="text-center">
+              <button type="submit" class="btn btn-danger">récupérer les users</button>
+            </div>
+          </form>
+        </div>
+    </div>
+ </div>
+   <div class="col-sm-3">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">update user with mongo</div>
+        <div class="card-body text-dark">
+          <form action="/update" method="post">
+              <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" name="id" class="form-control" placeholder="Choisissez un id">                    
+              </div>
+              <div class="form-group">
+                <label for="exampleusername">Nom d'utilisateur</label>
+                <input type="text" name="username" class="form-control" placeholder="Choisissez un user-name">                    
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">votre Mail</label>
+                <input type="email" name="usermail" class="form-control" id="exampleInputPassword1" placeholder="votre email">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">update un user</button>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div> 
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">delete user with mongo</div>
+        <div class="card-body text-dark">
+          <form action="/delete" method="post">
+              <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" name="id" class="form-control" placeholder="Choisissez un id">                    
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">supprimer un user</button>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
